@@ -13,6 +13,7 @@ public class Main {
                 """;
         double mediaEvaluacionUsuario = 0;
         double evaluacionPelicula = 0;
+        int cantidadCalificaciones = 0;
 
         System.out.println("Nombre de la película: " + nombre);
         System.out.print("Sinopsis: " + sinopsis);
@@ -37,5 +38,13 @@ public class Main {
         }
         System.out.println("El promedio de evaluación de la película " + nombre + " fue: " + mediaEvaluacionUsuario/3);
 
+        while (cantidadCalificaciones < 3) {
+            Scanner entrada = new Scanner(System.in);
+            System.out.println("Ingrese la calificación de la película: (" + nombre + ")");
+            evaluacionPelicula = entrada.nextDouble();
+            mediaEvaluacionUsuario = mediaEvaluacionUsuario + evaluacionPelicula;
+            cantidadCalificaciones++;
+        }
+        System.out.println("El promedio de evaluación de la película " + nombre + " fue: " + mediaEvaluacionUsuario/3);
     }
 }
