@@ -1,6 +1,9 @@
 package modelo;
 
+import java.util.Scanner;
+
 public class Titulo {
+    Scanner entrada = new Scanner(System.in);
     // Atributos de la clase
     private String nombre;
     private int fechaLanzamiento;
@@ -9,6 +12,7 @@ public class Titulo {
     private String sinopsis;
     private int tiempoDuracionEnMinutos;
 
+    //Métodos Getters y Setters
     public String getNombre() {
         return nombre;
     }
@@ -49,7 +53,17 @@ public class Titulo {
         this.tiempoDuracionEnMinutos = tiempoDuracionEnMinutos;
     }
 
-    public void verInfoPelicula(){
+    //Método para ingresar información sobre el título
+    public void ingresarInformacionTitulo(){
+        System.out.print("Ingrese el nombre del titulo: ");
+        nombre = entrada.nextLine();
+        System.out.print("Ingrese el año de lanzamiento: ");
+        fechaLanzamiento = entrada.nextInt();
+        entrada.nextLine();
+    }
+
+    //Método para ver información sobre el título
+    public void verInfoTitulo(){
         System.out.println("*** INFORMACIÓN DEL TÍTULO ***");
         System.out.println("Nombre: " + nombre +  "\nFecha de lanzamiento: " +
                 fechaLanzamiento + "\nTiempo de duración: " +
