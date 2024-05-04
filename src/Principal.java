@@ -5,6 +5,9 @@ import java.util.Scanner;
 public class Principal {
     public void mostrarMenu(){
         Scanner entrada = new Scanner(System.in);
+        Serie serieUsuario = new Serie();
+        Pelicula peliculaUsuario = new Pelicula();
+
         int opcion = 10;
 
         while (opcion != 0){
@@ -24,7 +27,6 @@ public class Principal {
             entrada.nextLine();
             switch (opcion){
                 case 1:
-                    Pelicula peliculaUsuario = new Pelicula();
                     peliculaUsuario.ingresarInformacionTitulo();
                     System.out.print("Ingrese la duración en minutos de la película: ");
                     int duracionEnMinutos = entrada.nextInt();
@@ -34,13 +36,16 @@ public class Principal {
 
                     break;
                 case 2:
-                    Serie serieUsuario = new Serie();
                     serieUsuario.ingresarInformacionTitulo();
                     serieUsuario.verInfoTitulo();
                     break;
                 case 3:
+                    CalculadoraDeTiempo calculadoraDeTiempo = new CalculadoraDeTiempo();
+                    calculadoraDeTiempo.calcularTiempoTitulos(serieUsuario);
+                    calculadoraDeTiempo.calcularTiempoTitulos(peliculaUsuario);
                     break;
                 case 0:
+
                     break;
                 default:
                     System.out.println("Opción no valida, intente de nuevo");
